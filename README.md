@@ -10,23 +10,25 @@ the idea is:
 Development:
 ============
 
+```
 git clone git://git.linuxtv.org/media_build.git 
 cd media_build 
 git checkout ef54f05ca46befdef5b9159c7e56066f12dc015a -B master 
-
 git clone https://github.com/BlackHole-Devel/media_tree.git media 
-
+```
 do whatever you want on our fork... 
 
 syncronize modified kernel source with media_build..
 
+```
 make -C linux dir DIR=../media/ 
-
+```
 build media-tree (TBD)
 
 since having a full history of the kernel is huge, we need to push just media tree somewhere... (github releasE?!
 
 follow a snippet from blackhole(legacy) git push hook
+```
 echo "Hello from $0 hook..." 
 echo "Creating temp directory" 
 temp_dir=$$ 
@@ -51,5 +53,5 @@ chmod 666 /home/git/www/archive/vuplus_kernel-${branch}-latest.tar.bz2 /home/git
 echo "Remove temp directory" 
 rm -rf /home/git/temp/$temp_dir/ 
 echo "vuplus_kernel-${branch}-latest.tar.bz2 ready :-)" 
-
+```
 
